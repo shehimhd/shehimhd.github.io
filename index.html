@@ -1,1511 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shehin Mohammed P</title>
+<meta name="description" content="Shehin Mohammed P is a full stack software engineer in Kochi building .NET, SQL Server and Next.js systems, and keeping production healthy.">
+<meta name="theme-color" content="#0d0d14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0d14;--bg2:#14141f;--ink:#F1EEE8;--mut:#9A98A8;--line:#26263a;--acc:#8B6CFF;--acc2:#FF7A59;
+ --disp:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--ser:'Instrument Serif',Georgia,serif;--body:'DM Sans','Segoe UI',system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--disp);margin:0;letter-spacing:-.025em;line-height:1.02}
+em{font-family:var(--ser);font-style:italic;font-weight:400;color:var(--acc);letter-spacing:0}
 
-    <title>Inspiria'22</title>
-    <meta http-equiv="Cache-Control" content="max-age=0, no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+nav{position:fixed;inset:0 0 auto;z-index:20;background:rgba(13,13,20,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+.mark{font:800 1.1rem var(--disp);text-decoration:none;background:var(--acc);color:#0d0d14;border-radius:8px;padding:2px 9px}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;color:var(--mut);font-size:.95rem}
+nav ul a:hover{color:var(--ink)}
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/jquery.flipster.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="icon" href="images/tab/logo-01.png">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:96px 0 40px;overflow:hidden}
+.giant{position:absolute;left:50%;top:14%;transform:translateX(-50%);font:800 clamp(6rem,27vw,21rem)/.8 var(--disp);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.5px #34344f;user-select:none;pointer-events:none;white-space:nowrap}
+.hero .wrap{position:relative;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:end}
+.photo{width:clamp(150px,22vw,230px);aspect-ratio:1;border-radius:50%;object-fit:cover;border:4px solid var(--acc);box-shadow:10px 10px 0 var(--acc2);background:var(--bg2)}
+.hero h1{font-size:clamp(2.6rem,7vw,5.2rem)}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 8px}
+.tags span{border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:.92rem;color:var(--mut)}
+.loc{color:var(--mut);margin:0}
+@media(max-width:700px){.hero .wrap{grid-template-columns:1fr}.giant{top:12%}nav ul{gap:16px}nav ul li:nth-child(n+4){display:none}}
 
+/* statement */
+.state{padding:110px 0 70px}
+.state h2{font-size:clamp(2.2rem,6vw,4.4rem);max-width:15ch}
+.state p{color:var(--mut);max-width:56ch;margin:26px 0 0}
+.stats{display:flex;flex-wrap:wrap;gap:20px 64px;margin-top:56px;padding-top:32px;border-top:1px solid var(--line)}
+.stats b{display:block;font:800 clamp(2.6rem,6vw,4rem)/1 var(--disp);color:var(--acc2)}
+.stats span{color:var(--mut);font-size:.95rem}
 
+/* marquee */
+.marq{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:18px 0;white-space:nowrap}
+.marq div{display:inline-flex;gap:28px;animation:slide 32s linear infinite;font:700 1.5rem var(--disp)}
+.marq i{color:var(--acc);font-style:normal}
+@keyframes slide{to{transform:translateX(-50%)}}
 
+section{padding:100px 0}
+h2.big{font-size:clamp(2.2rem,5.5vw,3.8rem);margin-bottom:44px}
 
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/tooplate-gymso-style.css">
+/* work */
+.job{display:grid;grid-template-columns:240px 1fr;gap:20px 48px;border-top:1px solid var(--line);padding-top:32px}
+.job .when{color:var(--mut)}
+.job h3{font-size:1.9rem}
+.job .co{color:var(--acc);margin:6px 0 24px}
+.job ul{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.job li{padding-left:22px;position:relative;color:#CFCCD8}
+.job li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:8px;border-radius:50%;background:var(--acc2)}
+@media(max-width:760px){.job{grid-template-columns:1fr}}
 
+/* skills */
+
+/* projects */
+.hint{color:var(--mut);margin:-26px 0 28px}
+.rail{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 max(24px,calc((100vw - 1072px)/2)) 24px;scrollbar-color:var(--acc) var(--bg2)}
+.card{flex:0 0 min(86vw,400px);scroll-snap-align:start;background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:16px;min-height:380px}
+.card:nth-child(odd){border-top:5px solid var(--acc)}
+.card:nth-child(even){border-top:5px solid var(--acc2)}
+.card h3{font:400 2.3rem/1.05 var(--ser)}
+.card p{margin:0;color:#CFCCD8;font-size:.98rem}
+.card ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:auto 0 0;padding:0}
+.card li{border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:.85rem;color:var(--mut)}
+.card a{color:var(--acc);font-weight:600}
+
+/* awards */
+.award{display:grid;grid-template-columns:auto 1fr;gap:20px 56px;align-items:center;border-top:1px solid var(--line);padding-top:36px}
+.yrs{font:800 clamp(3rem,9vw,6.5rem)/.9 var(--disp);color:transparent;-webkit-text-stroke:1.5px var(--acc)}
+.award h3{font-size:1.8rem;margin-bottom:10px}
+.award p{margin:0 0 8px;color:#CFCCD8;max-width:56ch}
+@media(max-width:700px){.award{grid-template-columns:1fr}}
+.edu{margin-top:64px;border-top:1px solid var(--line);padding-top:28px;display:grid;grid-template-columns:240px 1fr;gap:12px 48px}
+.edu span{color:var(--mut)}
+.edu h3{font-size:1.5rem}
+@media(max-width:760px){.edu{grid-template-columns:1fr}}
+
+/* contact */
+.hello{background:var(--acc);color:#0d0d14;border-radius:28px;margin:0 16px;padding:80px 24px;text-align:center}
+.hello h2{font-size:clamp(3rem,10vw,7.5rem)}
+.hello h2 em{color:#0d0d14}
+.hello p{max-width:46ch;margin:20px auto 36px;font-weight:500}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.links a{background:#0d0d14;color:var(--ink);padding:13px 26px;border-radius:999px;font-weight:600;text-decoration:none}
+.links a:hover{background:var(--acc2);color:#0d0d14}
+footer{padding:36px 24px;text-align:center;color:var(--mut);font-size:.9rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+
+/* skills explorer */
+.sx{display:grid;grid-template-columns:minmax(240px,.8fr) 1.2fr;gap:40px;border-top:1px solid var(--line);padding-top:32px;min-height:340px}
+.tabs{display:grid;align-content:start}
+.tabs button{all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;font:700 clamp(1.5rem,3.2vw,2.3rem)/1.1 var(--disp);letter-spacing:-.02em;color:#55546b;border-bottom:1px solid var(--line);transition:color .25s,padding .25s}
+.tabs button small{font:500 .9rem var(--body);color:var(--mut)}
+.tabs button:hover,.tabs button[aria-selected=true]{color:var(--ink);padding-left:14px}
+.tabs button[aria-selected=true]{border-bottom-color:var(--acc);box-shadow:inset 4px 0 0 var(--acc)}
+.tabs button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.panes{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:36px;display:flex;align-items:center}
+.pane ul{display:flex;flex-wrap:wrap;gap:12px;list-style:none;margin:0;padding:0}
+.pane li{font:400 clamp(1.4rem,3vw,2.2rem)/1 var(--ser);padding:10px 22px;border:1px solid var(--line);border-radius:999px;background:var(--bg);transition:transform .25s,background .25s,color .25s;animation:pop .55s cubic-bezier(.2,.9,.3,1.3) calc(var(--i,0)*60ms) backwards}
+.pane li:hover{background:var(--acc);color:#0d0d14;transform:translateY(-5px) rotate(-2deg)}
+@media(max-width:760px){.sx{grid-template-columns:1fr}}
+
+/* motion */
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.8)}}
+@keyframes rise{to{transform:none}}
+@keyframes photo{from{opacity:0;scale:.6;rotate:-14deg}}
+.bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--acc),var(--acc2));transform-origin:0 50%;transform:scaleX(var(--p,0));z-index:30}
+.glow{position:fixed;top:0;left:0;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(139,108,255,.17),transparent 65%);pointer-events:none;opacity:0;z-index:1;transition:opacity .4s}
+.giant{transform:translate(calc(-50% + var(--x,0px) + var(--mx,0px)),var(--y,0px))}
+.photo{translate:var(--px,0) var(--py,0);transition:translate .25s ease-out}
+.ln{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em}
+.ch{display:inline-block;transform:translateY(110%);animation:rise .8s cubic-bezier(.2,.8,.2,1) calc(var(--i)*45ms + 150ms) forwards}
+.js .photo{animation:photo 1s .4s cubic-bezier(.2,.9,.3,1.2) backwards}
+.js .tags span{animation:pop .6s 1s backwards}
+.js .tags span:nth-child(2){animation-delay:1.1s}.js .tags span:nth-child(3){animation-delay:1.2s}
+.js .loc{animation:pop .6s 1.3s backwards}
+.tags span{transition:border-color .25s,color .25s}.tags span:hover{border-color:var(--acc);color:var(--ink)}
+.mark{display:inline-block;transition:transform .3s}.mark:hover{transform:rotate(-8deg) scale(1.1)}
+nav ul a{position:relative;padding-bottom:4px}
+nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--acc);transform:scaleX(0);transform-origin:0 50%;transition:transform .3s}
+nav ul a.on,nav ul a:hover{color:var(--ink)}nav ul a.on::after{transform:scaleX(1)}
+.marq div{padding-right:28px}.marq:hover div{animation-play-state:paused}
+.marq span{transition:color .2s}.marq:not(.alt) span:hover{color:var(--acc)}
+.marq.alt{background:var(--bg)}.marq.alt span{color:transparent;-webkit-text-stroke:1px var(--mut)}.marq.alt span:hover{color:var(--ink)}
+.js .r{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) var(--d,0ms),transform .8s cubic-bezier(.2,.7,.2,1) var(--d,0ms)}
+.js .r.left{transform:translateX(-40px)}
+.js .r.scale{transform:translateY(24px) scale(.94)}
+.js .r.in{opacity:1;transform:none}
+.js .r.done{transition:transform .2s ease-out,opacity .2s}
+.js .job li.r::before{transform:scale(0);transition:transform .5s cubic-bezier(.3,1.6,.5,1) calc(var(--d,0ms) + .2s)}
+.js .job li.in::before{transform:scale(1)}
+.js .job li.done:hover{color:#fff;transform:translateX(8px)}
+.yrs{transition:color 1.4s .3s}.yrs.in{color:var(--acc)}
+.js .sx:not(.in) .pane li{animation:none;opacity:0}
+.card{position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(240px circle at var(--mx,50%) var(--my,0%),rgba(139,108,255,.18),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover::after{opacity:1}
+.rail{cursor:grab}.rail.drag{scroll-snap-type:none;cursor:grabbing;user-select:none}
+.stats>div{transition:transform .3s}
+.hello h2 em{display:inline-block;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}.hello h2:hover em{transform:rotate(-6deg) scale(1.08)}
+.links a{transition:transform .25s,background .2s,color .2s}
+</style>
 </head>
-
-<body data-spy="scroll" data-target="#navbarNav" data-offset="50">
-
-    <!-- MENU BAR -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-
-            <a class="navbar-brand" href="index.html"><img src="images/navbar/logo.png"></a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-lg-auto">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link ">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#about-event" class="nav-link">About EVENT</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#schedule" class="nav-link ">Schedules</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#gallery" class="nav-link ">Gallery</a>
-                    </li>
-
-
-
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link ">Contact</a>
-                    </li>
-                    
-
-
-                </ul>
-                <li class="nav-item nav-highlight btn btn-danger navbar-btn text-center">
-                    <a href="https://www.yepdesk.com/embed/buy-tickets/6251309dc9e77c00015ecee7/private/fvqs37c377" class="nav-link smoothScroll nav-btn-text">Buy Tickets</a>
-                </li>
-
-
-                
-            </div>
-
-        </div>
-    </nav>
-
-
-    <!-- HERO -->
-    <section class="slider hero d-flex flex-column justify-content-center align-items-center" id="home">
-
-
-
-
-
-
-        <div id="carouselExampleSlidesOnly" class="overlay carousel slide" data-ride="carousel">
-
-
-            <div class="carousel-item">
-                <img class="slider d-block w-100" src="images/home/1.webp" alt="First slide">
-            </div>
-            <div class="carousel-item  active">
-                <img class="slider d-block w-100" src="images/home/2.webp" alt="Second slide">
-            </div>
-            <div class="carousel-item ">
-                <img class="slider d-block w-100" src="images/home/3.webp" alt="Third slide">
-            </div>
-        </div>
-
-        <div class="LandingMain">
-            <!--Countdown Timer-->
-
-            <div class="countdownbox countdown col-lg-8 col-md-4 mx-auto " data-aos="fade-up" data-aos-delay="700">
-                <div class="container-days">
-                    <h3 class="days cdtext">00</h3>
-                    <h3 class="cdtext">Days</h3>
-                </div>
-                <div class="container-hours">
-                    <h3 class="hours cdtext">00</h3>
-                    <h3 class="cdtext">Hours</h3>
-                </div>
-                <div class="container-minutes">
-                    <h3 class="minutes cdtext">00</h3>
-                    <h3 class="cdtext">Minutes</h3>
-                </div>
-                <div class="container-seconds">
-                    <h3 class="seconds cdtext">00</h3>
-                    <h3 class="cdtext">Seconds</h3>
-                </div>
-
-                <!--Countdown Timer-->
-                
-
-            </div>
-
-            <div class="contposition container">
-
-                <div class="row mx-auto">
-
-
-
-
-                    <div class="hero-text mt-5 text-center">
-
-                        <h6 class="h6-home" data-aos="fade-up" data-aos-delay="300">Here begins the countdown to one of
-                            the best events
-                            of all time!<br>GET READY FOR</h6>
-
-                        <h1 class="text-white" data-aos="fade-up" data-aos-delay="500">flagship event of IEDC MESCE</h1>
-
-                        <a href="#about-event" class="halohalo btn custom-btn mt-3" data-aos="fade-up" data-aos-delay="600">
-                            Inspiria'22</a>
-
-                        <a href="https://www.yepdesk.com/embed/buy-tickets/6251309dc9e77c00015ecee7/private/fvqs37c377" class="btn custom-btn bordered mt-3" data-aos="fade-up"
-                            data-aos-delay="700">BUY TICKETS</a>
-
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-    </section>
-
-
-    <section class="feature" id="about-event">
-        <div class="container">
-            <div class="row">
-
-                <div class="d-flex flex-column justify-content-center ml-lg-auto mr-lg-5 col-lg-5 col-md-6 col-12">
-                    <h2 class="mb-3 text-white" data-aos="fade-up">ABOUT THE EVENT</h2>
-
-
-
-                    <p class="p-about" data-aos="fade-up" data-aos-delay="200"> Inspiria is the most awaited national
-                        flagship event
-                        conducted by <b>IEDC MESCE</b> annually.
-                        Inspiria focuses on developing a sense of confidence among students to pursue their dreams and
-                        boost their entrepreneurial spirit.
-                        This includes a set of events containing inspirational talk sessions and technical workshops by
-                        public personalities, experts and influencers. </p>
-
-                    <a href="https://www.iedcmesce.org" target="_blank" class="btn custom-btn bg-color mt-3"
-                        data-aos="fade-up" data-aos-delay="300" data-toggle="modal">Visit IEDC MESCE</a>
-                </div>
-
-                <div class="mr-lg-auto mt-3 col-lg-4 col-md-6 col-12">
-                    <div class="about-working-hours">
-                        <div>
-
-
-
-
-
-                            <strong class="mt-3 d-block" data-aos="fade-up" data-aos-delay="700">WHERE</strong>
-
-                            <p class="p-about" data-aos="fade-up" data-aos-delay="800">MES COLLEGE OF ENGINEERING,
-                                KUTTIPURAM</p>
-
-                            <strong class="mt-3 d-block" data-aos="fade-up" data-aos-delay="700">WHEN</strong>
-
-                            <p class="p-about" data-aos="fade-up" data-aos-delay="800">MAY 2022<br>13 14 15</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        </div>
-    </section>
-
-
-    <!-- ABOUT -->
-    <!--
-    <section class="about section" id="about">
-        <div class="container">
-            <div class="row">
-
-                <div class="mt-lg-5 mb-lg-0 mb-4 col-lg-5 col-md-10 mx-auto col-12">
-                    <h2 class="evnt-spkr-cont mb-4 h2-speakers" data-aos="fade-up" data-aos-delay="300">EVENT SPEAKERS
-                    </h2>
-
-                    <p class="evnt-spkr-cont p-justify" data-aos="fade-up" data-aos-delay="400">We have a bunch of
-                        unique and exceptional speakers gracing <b>INSPIRIA'22</b> with their presence! Make sure to
-                        show up and
-                        let them take you through an amazing journey!</p>
-
-
-
-                </div>
-
-                <div class="ml-lg-auto col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="500">
-                    <div class="team-thumb-updated team-thumb">
-                        <img src="images/speakers/shehin.jpeg" class="zoom img-fluid" alt="Trainer">
-
-                        <div class="team-info d-flex flex-column">
-
-                            <h3 class="h3-speakers">Shehi</h3>
-                            <span>Designer</span>
-
-                            <ul class="social-icon mt-3">
-                                <li><a href="#" class="fa fa-twitter"></a></li>
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mr-lg-auto mt-5 mt-lg-0 mt-md-0 col-lg-3 col-md-6 col-12" data-aos="fade-up"
-                    data-aos-delay="500">
-                    <div class="team-thumb-updated team-thumb">
-                        <img src="images/speakers/vishal.jpg" class="zoom img-fluid" alt="Trainer">
-
-                        <div class="team-info d-flex flex-column">
-
-                            <h3 class="h3-speakers">Vishal Sir</h3>
-                            <span>NodEl Officer</span>
-
-                            <ul class="social-icon mt-3">
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mr-lg-auto mt-5 mt-lg-0 mt-md-0 col-lg-3 col-md-6 col-12" data-aos="fade-up"
-                    data-aos-delay="600">
-                    <div class="team-thumb-updated team-thumb">
-                        <img src="images/speakers/shazi.jpg" class="zoom img-fluid" alt="Trainer">
-
-                        <div class="team-info d-flex flex-column">
-
-                            <h3 class="h3-speakers">Shazi</h3>
-                            <span>Money Man</span>
-
-                            <ul class="social-icon mt-3">
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mr-lg-auto mt-5 mt-lg-0 mt-md-0 col-lg-3 col-md-6 col-12" data-aos="fade-up"
-                    data-aos-delay="600">
-                    <div class="team-thumb-updated team-thumb">
-                        <img src="images/speakers/google-01.jpg" class="zoom img-fluid" alt="Trainer">
-
-                        <div class="team-info d-flex flex-column">
-
-                            <h3 class="h3-speakers">Google</h3>
-                            <span>CTO</span>
-
-                            <ul class="social-icon mt-3">
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mr-lg-auto mt-5 mt-lg-0 mt-md-0 col-lg-3 col-md-6 col-12" data-aos="fade-up"
-                    data-aos-delay="600">
-                    <div class="team-thumb-updated team-thumb">
-                        <img src="images/speakers/saar.jpg" class="zoom img-fluid" alt="Trainer">
-
-                        <div class="team-info d-flex flex-column">
-
-                            <h3 class="h3-speakers">Super</h3>
-                            <span>Reyder</span>
-
-                            <ul class="social-icon mt-3">
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mr-lg-auto mt-5 mt-lg-0 mt-md-0 col-lg-3 col-md-6 col-12" data-aos="fade-up"
-                    data-aos-delay="600">
-                    <div class="team-thumb-updated team-thumb">
-                        <img src="images/speakers/CEO.jpg" class="zoom img-fluid" alt="Trainer">
-
-                        <div class="team-info d-flex flex-column">
-
-                            <h3 class="h3-speakers">CEO</h3>
-                            <span>CEO</span>
-
-                            <ul class="social-icon mt-3">
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mr-lg-auto mt-5 mt-lg-0 mt-md-0 col-lg-3 col-md-6 col-12" data-aos="fade-up"
-                    data-aos-delay="700">
-                    <div class="team-thumb-updated team-thumb">
-                        <img src="images/speakers/fifi.jpg" class="zoom img-fluid" alt="Trainer">
-
-                        <div class="team-info d-flex flex-column">
-
-                            <h3 class="h3-speakers">fifi</h3>
-                            <span>CL</span>
-
-                            <ul class="social-icon mt-3">
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mr-lg-auto mt-5 mt-lg-0 mt-md-0 col-lg-3 col-md-6 col-12" data-aos="fade-up"
-                    data-aos-delay="700">
-                    <div class="team-thumb-updated team-thumb">
-                        <img src="images/speakers/meenutti.jpg" class="zoom img-fluid" alt="Trainer">
-
-                        <div class="team-info d-flex flex-column">
-
-                            <h3 class="h3-speakers">Meenutti</h3>
-                            <span>Tubeless</span>
-
-                            <ul class="social-icon mt-3">
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mr-lg-auto mt-5 mt-lg-0 mt-md-0 col-lg-3 col-md-6 col-12" data-aos="fade-up"
-                    data-aos-delay="700">
-                    <div class="team-thumb-updated team-thumb">
-                        <img src="images/speakers/reema.jpg" class="zoom img-fluid" alt="Trainer">
-
-                        <div class="team-info d-flex flex-column">
-
-                            <h3 class="h3-speakers">Reema</h3>
-                            <span>CTO</span>
-
-                            <ul class="social-icon mt-3">
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mr-lg-auto mt-5 mt-lg-0 mt-md-0 col-lg-3 col-md-6 col-12" data-aos="fade-up"
-                    data-aos-delay="700">
-                    <div class="team-thumb-updated team-thumb">
-                        <img src="images/speakers/reema.jpg" class="zoom img-fluid" alt="Trainer">
-
-                        <div class="team-info d-flex flex-column">
-
-                            <h3 class="h3-speakers">Reema</h3>
-                            <span>CTO</span>
-
-                            <ul class="social-icon mt-3">
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div>
-        </div>
-    </section>
--->
-
-    <!-- Schedule Section Start -->
-
-    <!--==========================
-      Schedule Section
-    ============================-->
-    <section id="schedule" class="section-with-bg">
-        <div class="container wow fadeInUp">
-            <div class="section-header">
-                <h2 class="mb-4 text-center h2-speakers" data-aos="fade-up" data-aos-delay="300">EVENT SCHEDULE</h2>
-                <p class="text-center schdl-margin" data-aos="fade-up" data-aos-delay="400">Here's how our event would
-                    go!
-                </p>
-            </div>
-
-            <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab" data-aos="fade-up"
-                        data-aos-delay="450">13th May</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#day-2" role="tab" data-toggle="tab" data-aos="fade-up"
-                        data-aos-delay="500">14th May</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#day-3" role="tab" data-toggle="tab" data-aos="fade-up"
-                        data-aos-delay="550">15th May</a>
-                </li>
-            </ul>
-
-
-
-            <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="650">
-
-                <!-- Schdule Day 1 -->
-                <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>02:00 PM - 03:00 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Registration</h4>
-                            <p>Meet at the College Auditorium for Registration.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>03:30 PM - 05:00 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Inauguration<span></span></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>05:00 PM - 06:00 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Tea & Ice Breaking <span></span></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>06:00 PM - 07:30 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Inspiria Eve<span></span></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>07:30 PM - 08:30 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Band MESCE</h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>08:30 PM - 09:30 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Dinner<span></span></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-
-
-                </div>
-                <!-- End Schdule Day 1 -->
-
-                <!-- Schdule Day 2 -->
-                <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>09:30 AM - 10:30 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Technical Talk<span></span></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>10:30 AM - 05:00 PM </time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Workshops . Games . Exhibition<span></span></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>05:00 PM - 07:00 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Tea, Networking and Group Photo Session<span></span></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>07:00 PM - 08:30 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>DJ<span></span></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>08:30 PM - 09:30 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Dinner <span></span></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-
-
-                </div>
-                <!-- End Schdule Day 2 -->
-
-                <!-- Schdule Day 3 -->
-                <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>09:30 AM - 11:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Entrepreneurial Talk<span></span></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>11:00 AM - 12:30 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Women Empowerment Talk <span></span></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>12:30 PM - 1:30 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Lunch <span></span></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>01:30 PM - 03:00 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Celebrity Interaction <span></span></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>03:00 PM - 04:30 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="" alt="">
-                            </div>
-                            <h4>Talk Session with Valedictory Fuction <span></span></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-
-                </div>
-                <!-- End Schdule Day 2 -->
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-
-
-    <!-- Schedule Section End -->
-
-    <!--EVENT VENUE-->
-
-    <!--
-    <section class="class section venue-bg" id="class">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-12 col-12 text-center mb-5">
-                    <h6 data-aos="fade-up">get to know the</h6>
-
-                    <h2 data-aos="fade-up" data-aos-delay="200">EVENT VENUE</h2>
-                </div>
-
-
-
-
-
-            </div>
-            <section id="venue" class="wow fadeInUp venue-margin" data-aos="fade-up" data-aos-delay="300">
-
-                <div class="container-fluid">
-
-                    <div class="section-header">
-
-                    </div>
-
-                    <div class="row no-gutters">
-                        <div class="col-lg-6 venue-info1">
-                            
-                            <a href="" class="venobox img-fluid" data-gall="venue-gallery"></a>
-
-                        </div>
-
-                        <div class="col-lg-6 venue-info">
-                            <div class="row justify-content-center">
-                                <div class="col-11 col-lg-8">
-                                    <h3 class="mb-4" data-aos="fade-up" data-aos-delay="350">MES College of Engineering.
-                                    </h3>
-                                    <p data-aos="fade-up" data-aos-delay="400">Proudly perched on the banks of Nila
-                                        River, MES College of Engineering
-                                        Kuttippuram is all set to host Inspiria'22. With all the right facilities, MES
-                                        would be the perfect place to hold Inspiria. With our spacious auditorium,
-                                        absolute greenery and breathtaking views, we are all set to welcome you in!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="container-fluid venue-gallery-container">
-                    <div class="row no-gutters">
-
-                        <div class="col-lg-3 col-md-4">
-                            <div class="venue-gallery">
-                                <a href="images/speakers/fifi.jpg" class="venobox" data-gall="venue-gallery">
-                                    <img src="images/speakers/fifi.jpg" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4">
-                            <div class="venue-gallery">
-                                <a href="img/venue-gallery/2.jpg" class="venobox" data-gall="venue-gallery">
-                                    <img src="img/venue-gallery/2.jpg" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4">
-                            <div class="venue-gallery">
-                                <a href="img/venue-gallery/3.jpg" class="venobox" data-gall="venue-gallery">
-                                    <img src="img/venue-gallery/3.jpg" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4">
-                            <div class="venue-gallery">
-                                <a href="img/venue-gallery/4.jpg" class="venobox" data-gall="venue-gallery">
-                                    <img src="img/venue-gallery/4.jpg" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4">
-                            <div class="venue-gallery">
-                                <a href="img/venue-gallery/5.jpg" class="venobox" data-gall="venue-gallery">
-                                    <img src="img/venue-gallery/5.jpg" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4">
-                            <div class="venue-gallery">
-                                <a href="img/venue-gallery/6.jpg" class="venobox" data-gall="venue-gallery">
-                                    <img src="img/venue-gallery/6.jpg" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4">
-                            <div class="venue-gallery">
-                                <a href="img/venue-gallery/7.jpg" class="venobox" data-gall="venue-gallery">
-                                    <img src="img/venue-gallery/7.jpg" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4">
-                            <div class="venue-gallery">
-                                <a href="img/venue-gallery/8.jpg" class="venobox" data-gall="venue-gallery">
-                                    <img src="img/venue-gallery/8.jpg" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </section>
-
-
-
-
-
-        </div>
-
-        </div>
-    </section>
--->
-
-    <!--==========================
-      Gallery Section
-    ============================-->
-
-
-    <section id="gallery" class="wow fadeInUp">
-
-        <div class="container">
-            <div class="section-header">
-                <h2 class="mb-4 text-center" data-aos="fade-up" data-aos-delay="300">GALLERY</h2>
-                <p class="text-center" data-aos="fade-up" data-aos-delay="400">Some glimpses of life at IEDC MESCE!
-                </p>
-            </div>
-        </div>
-
-
-
-        <!--jquery added at last
-        it has seperate jscript below and seperate css files called "swiper"-->
-
-        <div class="swiper-container" data-aos="fade-up" data-aos-delay="500">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/7-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/2-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/3-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/4-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/5-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/5-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/6-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/1-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/8-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/9-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/10-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/11-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/12-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/13-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/14-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/15-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/17-01.webp"></a></div>
-                <div class="swiper-slide"><img class="img-gallery" src="images/gallery/18-01.webp"></a></div>
-
-
-
-            </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-        </div>
-
-
-
-
-
-    </section>
-
-
-
-    <!-- SPONSORS -->
-
-    <!--section class="class section venue-bg" id="class">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-12 col-12 text-center mb-5">
-                    <h6 data-aos="fade-up">Thank You</h6>
-
-                    <h2 data-aos="fade-up" data-aos-delay="200">SPONSORS</h2>
-                </div>
-
-                <div class="row no-gutters sponsors-wrap clearfix" ata-aos-delay="300">
-
-                    <div class="col-lg-3 col-md-4 col-xs-6">
-                        <div class="sponsor-logo">
-                            <img src="" class="img-fluid zoom" alt="">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-xs-6">
-                        <div class="sponsor-logo">
-                            <img src="" class="img-fluid zoom" alt="">
-                        </div>
-                    </div>
-
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SPONSORS -->
-
-    <section class="class section" id="class">
-        <div class="container">
-            <div class="row_sponsors">
-
-                <div class="col-lg-12 col-12 text-center mb-5">
-                    <h6 data-aos="fade-up">Thank You</h6>
-
-                    <h2 data-aos="fade-up" data-aos-delay="200">SUPPORTERS</h2>
-                </div>
-
-                <div class="row_sponsors no-gutters sponsors-wrap clearfix" ata-aos-delay="300">
-
-                    <div class="col-lg-3 col-md-4 col-xs-6">
-                        <div class="sponsor-logo">
-                            <img src="images/class/py.webp" class="img-fluid zoom" alt="">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-xs-6">
-                        <div class="sponsor-logo">
-                            <img src="images/class/yp.webp" class="img-fluid zoom" alt="">
-                        </div>
-                    </div>
-
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- FAQ -->
-    <section class="schedule section" id="schedule">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-12 col-12 text-center">
-                    <h6 data-aos="fade-up"></h6>
-
-                    <h2 class="faq-text mb-4" data-aos="fade-up" data-aos-delay="200">FAQ</h2>
-                </div>
-
-
-            </div>
-            <section id="faq">
-
-
-
-
-
-                <div class="justify-content-center">
-                    <div>
-                        <ul id="faq-list">
-
-                            <li data-aos="fade-up" data-aos-delay="300">
-                                <a data-toggle="collapse" class="collapsed" href="#faq1">What is Inspiria'22?<i
-                                        class="fa fa-minus-circle"></i></a>
-                                <div id="faq1" class="collapse" data-parent="#faq-list">
-                                    <p class="p-about">
-                                        Inspiria is the most awaited national flagship event conducted by IEDC MESCE
-                                        annually.
-                                        Inspiria focuses on developing a sense of confidence among students to pursue
-                                        their dreams and boost their entrepreneurial spirit.
-                                        This includes a set of events containing inspirational talk sessions and
-                                        technical workshops by public personalities, experts and influencers.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li data-aos="fade-up" data-aos-delay="350">
-                                <a data-toggle="collapse" href="#faq2" class="collapsed">Who can attend Inspiria'22?<i
-                                        class="fa fa-minus-circle"></i></a>
-                                <div id="faq2" class="collapse" data-parent="#faq-list">
-                                    <p class="p-about">
-                                        Absolutely open to all! No matter what course you're in, Inspiria'22 would be
-                                        worth attending!
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li data-aos="fade-up" data-aos-delay="400">
-                                <a data-toggle="collapse" href="#faq3" class="collapsed">Is IEDC membership mandatory?<i
-                                        class="fa fa-minus-circle"></i></a>
-                                <div id="faq3" class="collapse" data-parent="#faq-list">
-                                    <p class="p-about">
-                                        No. Any student can register and be a part of Inspiria'22.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li data-aos="fade-up" data-aos-delay="450">
-                                <a data-toggle="collapse" href="#faq5" class="collapsed">Do you have roam around
-                                    provisions?<i class="fa fa-minus-circle"></i></a>
-                                <div id="faq5" class="collapse" data-parent="#faq-list">
-                                    <p class="p-about">
-                                        Definitely. We have included roam around option to accommodate the interests of
-                                        those who wish to visit stalls.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li data-aos="fade-up" data-aos-delay="450">
-                                <a data-toggle="collapse" href="#faq4" class="collapsed">Do you provide an accommodation
-                                    facility?<i class="fa fa-minus-circle"></i></a>
-                                <div id="faq4" class="collapse" data-parent="#faq-list">
-                                    <p class="p-about">
-                                        Yes. We'll be arranging accommodation facilities for boys and girls in our
-                                        respective hostels.
-                                    </p>
-                                </div>
-                            </li>
-
-
-
-
-
-                        </ul>
-                    </div>
-                </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-
-    <section class="class section" id="class1">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-12 col-12 text-center mb-5">
-
-
-                    <h2 data-aos="fade-up" data-aos-delay="300">GET NOTIFIED!</h2>
-                    <h6 data-aos="fade-up" data-aos-delay="400">Subscribe here to receive latest updates and news from
-                        IEDC MESCE!</h6>
-                </div>
-
-
-            </div>
-            <section id="subscribe">
-                <div class="container wow fadeInUp">
-
-
-                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-                        onload="if(submitted) {window.location='';}"></iframe>
-                    <form
-                        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScInW5OkOQyLuU3oLlv3l57P3cF5A1WdvRgl_ygIJhxRoMiFw/formResponse"
-                        method="post" target="hidden_iframe">
-                        <div class="form-row justify-content-center">
-                            <div class="col-auto">
-                                <input type="text" class="form-control" placeholder="Enter your Email" required
-                                    name="entry.142372613">
-                            </div>
-                            <div class="col-auto">
-                                <button type="submit" id="submit-button-sub">Subscribe</button>
-                            </div>
-                        </div>
-                    </form>
-
-                </div>
-            </section>
-        </div>
-    </section>
-
-
-    <!-- buy tckets -->
-    <!--
-    <section class="class section" id="buytickets">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-12 col-12 text-center mb-5">
-                    <h6 data-aos="fade-up">Book your slots for Inspiria'22 </h6>
-
-                    <h2 data-aos="fade-up" data-aos-delay="200">BUY TICKETS</h2>
-                </div>
-
-
-            </div>
-
-        </div>-->
-    <!--==========================
-      Buy Ticket Section
-    ============================-->
-    <!--
-        <section id="buy-tickets" class="section-with-bg wow fadeInUp">
-            <div class="container">
-
-
-
-                <div class="row margin-ticket" data-aos="fade-up" data-aos-delay="300">
-                    <div class="col-lg-4">
-                        <div class="card mb-5 mb-lg-0">
-                            <div class="card-body">
-                                <h5 class="card-title text-muted text-uppercase text-center">Standard Access</h5>
-                                <h6 class="card-price text-center">$150</h6>
-                                <hr>
-                                <ul class="fa-ul">
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Regular Seating</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Coffee Break</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Custom Badge</li>
-                                    <li class="text-muted"><span class="fa-li"><i
-                                                class="fa fa-times"></i></span>Community Access</li>
-                                    <li class="text-muted"><span class="fa-li"><i
-                                                class="fa fa-times"></i></span>Workshop Access</li>
-                                    <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>After
-                                        Party</li>
-                                </ul>
-                                <hr>
-                                <div class="text-center">
-                                    <button type="button" class="btn" data-toggle="modal"
-                                        data-target="#buy-ticket-modal" data-ticket-type="standard-access">Buy
-                                        Now</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card mb-5 mb-lg-0">
-                            <div class="card-body">
-                                <h5 class="card-title text-muted text-uppercase text-center">Pro Access</h5>
-                                <h6 class="card-price text-center">$250</h6>
-                                <hr>
-                                <ul class="fa-ul">
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Regular Seating</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Coffee Break</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Custom Badge</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Community Access</li>
-                                    <li class="text-muted"><span class="fa-li"><i
-                                                class="fa fa-times"></i></span>Workshop Access</li>
-                                    <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>After
-                                        Party</li>
-                                </ul>
-                                <hr>
-                                <div class="text-center">
-                                    <button type="button" class="btn" data-toggle="modal"
-                                        data-target="#buy-ticket-modal" data-ticket-type="pro-access">Buy Now</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Pro Tier -->
-    <!--
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title text-muted text-uppercase text-center">Premium Access</h5>
-                                <h6 class="card-price text-center">$350</h6>
-                                <hr>
-                                <ul class="fa-ul">
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Regular Seating</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Coffee Break</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Custom Badge</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Community Access</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Workshop Access</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>After Party</li>
-                                </ul>
-                                <hr>
-                                <div class="text-center">
-                                    <button type="button" class="btn" data-toggle="modal"
-                                        data-target="#buy-ticket-modal" data-ticket-type="premium-access">Buy
-                                        Now</button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Modal Order Form -->
-    <!--
-            <div id="buy-ticket-modal" class="modal fade">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Buy Tickets</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form method="POST" action="#">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="your-name" placeholder="Your Name">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="your-email" placeholder="Your Email">
-                                </div>
-                                <div class="form-group">
-                                    <select id="ticket-type" name="ticket-type" class="form-control">
-                                        <option value="">-- Select Your Ticket Type --</option>
-                                        <option value="standard-access">Standard Access</option>
-                                        <option value="pro-access">Pro Access</option>
-                                        <option value="premium-access">Premium Access</option>
-                                    </select>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn">Buy Now</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-        </section>
-    </section>
--->
-
-
-    <!--contact us / social media-->
-
-    <section class="class section" id="class">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-12 col-12 text-center mb-5">
-                    <h6 data-aos="fade-up">Want to know more!!</h6>
-
-                    <h2 data-aos="fade-up" data-aos-delay="200">CONTACT US</h2>
-                </div>
-
-
-            </div>
-            <!--==========================
-      Contact Section
-    ============================-->
-            <section id="contact" class="section-bg wow fadeInUp">
-
-                <div class="container contact-bg-color">
-
-
-
-                    <div class="contact-margin row contact-info">
-
-                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                            <div class="contact-address">
-                                <i class="ion-ios-location-outline"></i>
-                                <h3>Address</h3>
-                                <address>Kumbidi-Thrikkanapuram Rd, Kuttippuram, Kerala 679582</address>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-                            <div class="contact-phone">
-                                <i class="ion-ios-telephone-outline"></i>
-                                <h3>Phone Number</h3>
-                                <p><a href="tel:+919544487260">9544487260</a></p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
-                            <div class="contact-email">
-                                <i class="ion-ios-email-outline"></i>
-                                <h3>Email</h3>
-                                <p><a href="mailto:mesceedc@gmail.com">mesceedc@gmail.com</a></p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section>
-
-
-
-
-
-
-
-            <!-- CONTACT -->
-            <section class="contact section" id="contact">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="ml-auto col-lg-5 col-md-6 col-12">
-                            <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200">Feel free to ask anything!
-                            </h2>
-                            <script type="text/javascript">
-                                var submitted = false;
-                            </script>
-                            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-                                onload="if(submitted) {window.location='';}"></iframe>
-                            <!--<form
-                                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSedjmK_Ea5AgLHyrzEJaSXdKw4oR9keTUAZ76fWVZ4mJ5WFgg/formResponse"
-                                method="post" target="hidden_iframe">
-
-
-                                <div class="w3-section">
-                                    <label>Name</label>
-                                    <input class="w3-input w3-border" type="text" placeholder="Name" id="name" required
-                                        name="entry.350136210">
-                                </div>
-                                <div class="w3-section">
-                                    <label>Email</label>
-                                    <input class="w3-input w3-border" type="text" placeholder="Email" id="email"
-                                        required name="entry.740154549">
-                                </div>
-                                <div class="w3-section">
-                                    <label>Phone</label>
-                                    <input class="w3-input w3-border" type="text" placeholder="Phone" id="phone"
-                                        required name="entry.1755436204">
-                                </div>
-
-                                <div class="w3-section">
-                                    <button class="w3-button w3-block w3-black w3-margin-bottom"
-                                        type="submit">SEND</button>
-                                </div>
-                            </form> -->
-
-                            <form
-                                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSedjmK_Ea5AgLHyrzEJaSXdKw4oR9keTUAZ76fWVZ4mJ5WFgg/formResponse"
-                                method="post" target="hidden_iframe" data-aos="fade-up" data-aos-delay="400">
-                                <input type="text" class="form-control" placeholder="Name" id="name" required
-                                    name="entry.350136210">
-
-                                <input type="email" class="form-control" placeholder="Email" id="email" required
-                                    name="entry.740154549">
-
-                                <textarea class="form-control" rows="5" placeholder="Message" id="name" required
-                                    name="entry.1755436204"></textarea>
-
-                                <button type="submit" class="form-control" id="submit-button" name="submit">Send
-                                    Message</button>
-
-                            </form>
-                        </div>
-
-                        <div class="mx-auto mt-4 mt-lg-0 mt-md-0 col-lg-5 col-md-6 col-12">
-                            <h2 class="mb-4" data-aos="fade-up" data-aos-delay="600">Where you can <span>find us</span>
-                            </h2>
-
-                            <p data-aos="fade-up" data-aos-delay="800"><i class="fa fa-map-marker mr-1"></i>MES College
-                                of
-                                Engineering, Kuttipuram, Kerala, India</p>
-                            <!-- How to change your own map point
-	1. Go to Google Maps
-	2. Click on your location point
-	3. Click "Share" and choose "Embed map" tab
-	4. Copy only URL and paste it within the src="" field below
--->
-                            <div class="google-map" data-aos="fade-up" data-aos-delay="900">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.757548949728!2d76.0205827152412!3d10.82985716116544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7b9db15236a4b%3A0xd60d2140eeb6c6d7!2sMES%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1650097789848!5m2!1sen!2sin"
-                                    width="1920" height="250" frameborder="0" style="border:0;"
-                                    allowfullscreen=""></iframe>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- FOOTER -->
-            <footer class="site-footer">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="ml-auto col-lg-4 col-md-5">
-                            <p class="copyright-text" data-aos="fade-up" data-aos-delay="300">Copyright &copy; 2022 IEDC
-                                MESCE.
-
-                                <br>Design: <b data-aos="fade-up" data-aos-delay="550">TEAM IEDC</b></a>
-                            </p>
-                        </div>
-
-                        <div class="d-flex justify-content-center mx-auto col-lg-5 col-md-7 col-12">
-                            <p class="mr-4 zoom" data-aos="fade-up" data-aos-delay="400">
-                                <i class="fa fa-envelope-o mr-1"></i>
-                                <a>mesceedc@gmail.com</a>
-                            </p>
-
-                            <p class="zoom" data-aos="fade-up" data-aos-delay="500"><a href="tel:+919544487260"></a><i
-                                    class="fa fa-phone mr-1"></i>
-                                9544487260</p>
-                            <div id="footer" class="footer-top social-footer">
-                                <a href="https://twitter.com/iedcmesce" class="twitter" target="_blank"><i
-                                        class="zoom fa fa-twitter margin-social-right" data-aos="fade-up"
-                                        data-aos-delay="550"></i></a>
-                                <a href="https://www.facebook.com/IEDCMESCE" class="facebook" target="_blank"><i
-                                        class="zoom fa fa-facebook margin-social-right" data-aos="fade-up"
-                                        data-aos-delay="600"></i></a>
-                                <a href="https://www.instagram.com/iedcmesce/" class="instagram" target="_blank"><i
-                                        class="zoom fa fa-instagram margin-social-right" data-aos="fade-up"
-                                        data-aos-delay="650"></i></a>
-                                <a href="https://www.linkedin.com/company/iedcmesce/" class="linkedin"
-                                    target="_blank"><i class="zoom margin-social-right fa fa-linkedin"
-                                        data-aos="fade-up" data-aos-delay="700"></i></a>
-                            </div>
-
-                        </div>
-
-
-
-
-
-
-                    </div>
-                </div>
-            </footer>
-            <a href="#home" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-
-
-
-            <!-- SCRIPTS -->
-            <script>
-                $("#submit-button").click(function () {
-                    alert("The Message has been Sent.");
-                });
-            </script>
-            <script>
-                $("#submit-button-sub").click(function () {
-                    alert("You have been Subscribed.");
-                });
-            </script>
-
-            <script src="js/countdown.js"></script>
-            <!--Galery Carousel-->
-            <!-- Swiper JS -->
-            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-            <script src="../package/swiper-bundle.min.js"></script>
-
-            <!-- Initialize Swiper -->
-            <script>
-                var swiper = new Swiper('.swiper-container', {
-                    effect: 'coverflow',
-                    grabCursor: true,
-                    centeredSlides: true,
-                    slidesPerView: 'auto',
-                    coverflowEffect: {
-                        rotate: 20,
-                        stretch: 0,
-                        depth: 200,
-                        modifier: 1,
-                        slideShadows: true,
-                    },
-                    loop: true,
-
-                });
-            </script>
-
-
-            <!--Galery Carousel-->
-
-            <script src="js/jquery.min.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <script src="js/aos.js"></script>
-            <script src="js/smoothscroll.js"></script>
-            <script src="js/custom.js"></script>
-
-            <!-- Contact Us Validation-->
-
-            <script type="text/javascript">
-                function validateName() {
-                    var name = document.getElementById('name').value;
-                    if (name.length == 0) {
-                        alert("Name can't be blank");
-                        return false;
-
-                    }
-                    if (!name.match(/^[a-zA-Z]{3,}(?: [a-zA-Z]+){0,2}$/)) {
-                        alert("Please enter your correct name"); //Validation Message
-                        return false;
-                    }
-                    return true;
-                }
-
-                function validatePhone() {
-                    var phone = document.getElementById('phone').value;
-                    if (phone.length == 0) {
-                        alert("Phone number can't be blank"); //Validation Message
-                        return false;
-                    }
-
-                    if (!phone.match(/^[0]?[789]\d{9}$/)) {
-                        alert("Please enter a correct phone number"); //Validation Message
-                        return false;
-                    }
-
-                    return true;
-
-                }
-
-                function validateEmail() {
-
-                    var email = document.getElementById('email').value;
-                    if (email.length == 0) {
-                        alert("Email can't be blank"); //Validation Message
-                        return false;
-
-                    }
-
-                    if (!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
-                        alert("Please enter a correct email address"); //Validation Message
-                        return false;
-
-                    }
-
-                    return true;
-
-                }
-
-
-                function validateForm() {
-                    if (!validateName() || !validatePhone() || !validateEmail()) {
-
-                        alert("Form not submitted"); //Validation Message
-                        return false;
-                    } else {
-                        submitted = true;
-                        return true;
-                    }
-                }
-            </script>
-
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-            <script src="js/script.js"></script>
-
-
+<body>
+<nav><div class="wrap">
+  <a class="mark" href="#top" aria-label="Back to top">SM</a>
+  <ul><li><a href="#work">Work</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#awards">Awards</a></li><li><a href="#hello">Hello</a></li></ul>
+</div></nav>
+
+<main id="top">
+<header class="hero">
+  <div class="giant" aria-hidden="true">SHEHIN</div>
+  <div class="wrap">
+    <img class="photo" src="shehin.jpg" alt="Portrait of Shehin Mohammed P" width="230" height="230">
+    <div>
+      <h1>Shehin<br>Mohammed P</h1>
+      <div class="tags"><span>Software Engineer</span><span>Full stack</span><span>L3 support</span></div>
+      <p class="loc">Kochi, Kerala, India</p>
+    </div>
+  </div>
+</header>
+
+<div class="state"><div class="wrap">
+  <h2>I build the software <em>businesses run on.</em></h2>
+  <p>Four years of C#, .NET and SQL Server in enterprise environments: web apps, REST APIs, SSIS pipelines and e-commerce platforms. When something breaks in production, I’m the one who digs in and fixes it.</p>
+  <div class="stats">
+    <div><b>4+</b><span>years of experience</span></div>
+    <div><b>3×</b><span>Eagle Squad Award</span></div>
+    <div><b>L3</b><span>production support</span></div>
+  </div>
+</div></div>
+
+<div class="marq" aria-hidden="true"><div>
+  <span>C#</span><i>✦</i><span>.NET</span><i>✦</i><span>ASP.NET Core</span><i>✦</i><span>Blazor</span><i>✦</i><span>Razor</span><i>✦</i><span>SQL Server</span><i>✦</i><span>SSIS</span><i>✦</i><span>Next.js</span><i>✦</i><span>TypeScript</span><i>✦</i><span>REST APIs</span><i>✦</i>
+  <span>C#</span><i>✦</i><span>.NET</span><i>✦</i><span>ASP.NET Core</span><i>✦</i><span>Blazor</span><i>✦</i><span>Razor</span><i>✦</i><span>SQL Server</span><i>✦</i><span>SSIS</span><i>✦</i><span>Next.js</span><i>✦</i><span>TypeScript</span><i>✦</i><span>REST APIs</span><i>✦</i>
+</div></div>
+
+<section id="work"><div class="wrap">
+  <h2 class="big">Where I’ve <em>been working.</em></h2>
+  <article class="job">
+    <div class="when">Aug 2022 to present<br>Kochi</div>
+    <div>
+      <h3>Software Engineer</h3>
+      <p class="co">Xerox Technology Services LLP</p>
+      <ul>
+        <li>Design, develop and maintain production-grade web applications, websites, web services and data processing solutions.</li>
+        <li>Build and extend e-commerce and business applications to client requirements, with scalability and performance in mind.</li>
+        <li>Develop and manage REST APIs and third-party integrations between internal and external systems.</li>
+        <li>Design and optimize SQL Server databases: data modeling, query tuning and maintenance.</li>
+        <li>Create, maintain and monitor SSIS packages for migration, transformation, synchronization and reporting.</li>
+        <li>Work across the full SDLC, from requirement analysis and testing to deployment and post-production support.</li>
+        <li>Run code reviews and apply best practices for quality, security and development standards.</li>
+        <li>Keep existing client platforms improving and running smoothly.</li>
+        <li>Provide L3 support, resolving complex application, database, API and data-processing issues.</li>
+      </ul>
+    </div>
+  </article>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2 class="big">What I <em>work with.</em></h2>
+  <div class="sx"><div class="tabs" role="tablist" aria-label="Skill groups"><button role="tab" id="t0" aria-controls="p0" aria-selected="true"><span>Languages</span><small>4</small></button><button role="tab" id="t1" aria-controls="p1" aria-selected="false"><span>Frameworks</span><small>8</small></button><button role="tab" id="t2" aria-controls="p2" aria-selected="false"><span>Database and ETL</span><small>2</small></button><button role="tab" id="t3" aria-controls="p3" aria-selected="false"><span>APIs</span><small>2</small></button><button role="tab" id="t4" aria-controls="p4" aria-selected="false"><span>Tools</span><small>5</small></button></div><div class="panes"><div class="pane" role="tabpanel" id="p0" aria-labelledby="t0"><ul><li>C#</li><li>JavaScript</li><li>TypeScript</li><li>SQL</li></ul></div><div class="pane" role="tabpanel" id="p1" aria-labelledby="t1"><ul><li>.NET</li><li>.NET Core</li><li>ASP.NET Core</li><li>ASP.NET MVC</li><li>Blazor</li><li>Razor Pages</li><li>Next.js</li><li>LINQ</li></ul></div><div class="pane" role="tabpanel" id="p2" aria-labelledby="t2"><ul><li>SQL Server</li><li>SSIS</li></ul></div><div class="pane" role="tabpanel" id="p3" aria-labelledby="t3"><ul><li>REST APIs</li><li>Web Services</li></ul></div><div class="pane" role="tabpanel" id="p4" aria-labelledby="t4"><ul><li>Git</li><li>Swagger</li><li>Postman</li><li>Insomnia</li><li>GitHub Copilot</li></ul></div></div></div>
+</div></section>
+
+<section id="projects" style="padding-inline:0"><div class="wrap">
+  <h2 class="big">Things I’ve <em>made.</em></h2>
+  <p class="hint">Scroll sideways for more →</p></div>
+  <div class="rail" tabindex="0" role="region" aria-label="Projects">
+    <article class="card">
+      <h3>GetPackage</h3>
+      <p>A .NET executable that builds deployment packages for Web Forms applications. It reads Git metadata to find modified files and assembles a structured package for production releases, which cuts manual effort and release errors.</p>
+      <ul><li>.NET</li><li>C#</li><li>Git</li></ul>
+    </article>
+    <article class="card">
+      <h3>IEDC MESCE website</h3>
+      <p>A static site for Inspiria, the flagship event organized by IEDC MESCE. Visitors buy tickets through an integrated payment application and send questions to get prompt answers.</p>
+      <ul><li>Web</li><li>Payments</li></ul>
+      <a href="#" target="_blank" rel="noopener">Visit website</a>
+    </article>
+    <article class="card">
+      <h3>Face recognition attendance</h3>
+      <p>A Python and OpenCV system that recognizes faces and records attendance automatically, built for classrooms and workplaces.</p>
+      <ul><li>Python</li><li>OpenCV</li></ul>
+    </article>
+    <article class="card">
+      <h3>Smart waste management</h3>
+      <p>A basic IoT project that measures waste in a basket in real time. My first hands-on step into IoT and a base for further experiments.</p>
+      <ul><li>IoT</li><li>Sensors</li></ul>
+    </article>
+  </div>
+</section>
+
+<section id="awards"><div class="wrap">
+  <div class="award">
+    <div class="yrs">2024<br>2025<br>2026</div>
+    <div>
+      <h3>Eagle Squad Award</h3>
+      <p>Recognized as part of a high-performing team for exceptional project delivery, technical excellence and collaboration.</p>
+      <p>Delivered and supported multiple enterprise web applications and data processing solutions in production.</p>
+    </div>
+  </div>
+  <div class="edu">
+    <span>Aug 2018 to Jul 2022</span>
+    <div><h3>B.Tech, Computer Science Engineering</h3><span>MES College of Engineering, Kuttipuram</span></div>
+  </div>
+</div></section>
+
+<section id="hello" style="padding:0 0 16px">
+  <div class="hello">
+    <h2>Say <em>hello.</em></h2>
+    <p>Open to full stack and .NET roles. Send a message and I’ll reply.</p>
+    <!-- TODO: replace with your own details -->
+    <div class="links">
+      <a href="mailto:your.email@example.com">Email</a>
+      <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>© <span id="y">2026</span> Shehin Mohammed P · Kochi, Kerala</footer>
+<script>
+(()=>{
+const d=document,root=d.documentElement,fine=matchMedia('(pointer:fine)').matches,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+d.getElementById('y').textContent=new Date().getFullYear();
+/* skills tabs */
+const tabs=[...d.querySelectorAll('.tabs button')],panes=[...d.querySelectorAll('.pane')];
+panes.forEach(p=>p.querySelectorAll('li').forEach((li,i)=>li.style.setProperty('--i',i)));
+function pick(i,f){tabs.forEach((t,j)=>{t.setAttribute('aria-selected',j===i);t.tabIndex=j===i?0:-1});panes.forEach((p,j)=>p.hidden=j!==i);if(f)tabs[i].focus()}
+tabs.forEach((t,i)=>{t.onclick=()=>pick(i);t.onmouseenter=()=>{if(fine)pick(i)};t.onkeydown=e=>{const k={ArrowDown:1,ArrowRight:1,ArrowUp:-1,ArrowLeft:-1}[e.key];if(k){e.preventDefault();pick((i+k+tabs.length)%tabs.length,1)}}});
+pick(0);
+if(rm)return;
+root.classList.add('js');
+/* hero name */
+const h1=d.querySelector('.hero h1');h1.setAttribute('aria-label','Shehin Mohammed P');let n=0;
+h1.innerHTML=['Shehin','Mohammed P'].map(w=>'<span class="ln" aria-hidden="true">'+[...w].map(c=>`<span class="ch" style="--i:${n++}">${c===' '?'&nbsp;':c}</span>`).join('')+'</span>').join('<br>');
+/* second marquee */
+const m=d.querySelector('.marq'),m2=m.cloneNode(true),w=['Git','Swagger','Postman','Insomnia','GitHub Copilot','Code reviews','L3 support','SDLC','Query tuning','Data migration'];
+m2.firstElementChild.innerHTML=w.concat(w).map(x=>`<span>${x}</span><i>✦</i>`).join('');m2.firstElementChild.style.animationDirection='reverse';m2.classList.add('alt');m.after(m2);
+/* scroll reveals */
+[['.state h2,.state p,h2.big,.hint,.stats>div,.job li,.award>*,.hello>*,.edu','up'],['.job>div:first-child','left'],['.card,.sx,.hello','scale']].forEach(([sel,v])=>d.querySelectorAll(sel).forEach(el=>{el.classList.add('r',v);el.style.setProperty('--d',Math.min([...el.parentElement.children].indexOf(el),8)*90+'ms')}));
+function count(b){const m=b.textContent.match(/^(\d+)(.*)$/);if(!m)return;const to=+m[1],t0=performance.now();(function f(t){const p=Math.min((t-t0)/1300,1);b.textContent=Math.round(to*(1-Math.pow(1-p,3)))+m[2];if(p<1)requestAnimationFrame(f)})(t0)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;el.classList.add('in');io.unobserve(el);setTimeout(()=>el.classList.add('done'),1700);if(el.matches('.stats>div'))count(el.querySelector('b'))}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+d.querySelectorAll('.r').forEach(el=>io.observe(el));
+/* progress bar + parallax */
+const bar=d.createElement('div');bar.className='bar';d.body.prepend(bar);const giant=d.querySelector('.giant');let tk=0;
+function onScroll(){const y=scrollY,h=root.scrollHeight-innerHeight;bar.style.setProperty('--p',h>0?y/h:0);giant.style.setProperty('--y',y*.28+'px');giant.style.setProperty('--x',y*-.12+'px');tk=0}
+addEventListener('scroll',()=>{if(!tk){tk=1;requestAnimationFrame(onScroll)}},{passive:true});onScroll();
+/* nav highlight */
+const links=[...d.querySelectorAll('nav ul a')],so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+['work','skills','projects','awards','hello'].forEach(id=>so.observe(d.getElementById(id)));
+/* project rail drag */
+const rail=d.querySelector('.rail');let down=0,sx=0,sl=0;
+rail.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;down=1;sx=e.clientX;sl=rail.scrollLeft;rail.classList.add('drag')});
+addEventListener('pointermove',e=>{if(down)rail.scrollLeft=sl-(e.clientX-sx)});
+addEventListener('pointerup',()=>{down=0;rail.classList.remove('drag')});
+if(!fine)return;
+/* cursor glow, hero parallax, tilt cards, magnetic links */
+const g=d.createElement('div');g.className='glow';d.body.prepend(g);
+addEventListener('pointermove',e=>{g.style.transform=`translate3d(${e.clientX-210}px,${e.clientY-210}px,0)`;g.style.opacity=1},{passive:true});
+const ph=d.querySelector('.photo');
+d.querySelector('.hero').addEventListener('mousemove',e=>{const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;ph.style.setProperty('--px',x*28+'px');ph.style.setProperty('--py',y*28+'px');giant.style.setProperty('--mx',x*-40+'px')});
+d.querySelectorAll('.card').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');if(c.classList.contains('done')&&!down)c.style.transform=`perspective(900px) rotateX(${(.5-y)*8}deg) rotateY(${(x-.5)*10}deg) translateY(-4px)`});c.addEventListener('pointerleave',()=>c.style.transform='')});
+d.querySelectorAll('.links a').forEach(a=>{a.addEventListener('pointermove',e=>{const r=a.getBoundingClientRect();a.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`});a.addEventListener('pointerleave',()=>a.style.transform='')});
+})();
+</script>
 </body>
-
 </html>
