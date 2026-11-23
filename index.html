@@ -254,6 +254,12 @@ nav ul a.on,nav ul a:hover{color:var(--ink)}nav ul a.on::after{transform:scaleX(
 .card .more{color:var(--acc);font-weight:600}
 .card .more::after{content:" →";transition:margin .2s}
 .card:hover .more::after{margin-left:6px}
+
+/* animated eyes thumbnail */
+.card .thumb.eyes{display:flex;align-items:center;justify-content:center;gap:24px;background:#000}
+.thumb.eyes i{width:40px;height:54px;border-radius:14px;background:#fff;box-shadow:0 0 14px rgba(255,255,255,.4);animation:blink 4.5s infinite,glance 7s ease-in-out infinite}
+@keyframes blink{0%,90%,100%{transform:scaleY(1)}94%{transform:scaleY(.1)}}
+@keyframes glance{0%,35%,100%{translate:0}45%,60%{translate:14px}70%,85%{translate:-14px}}
 </style>
 </head>
 <body>
@@ -335,6 +341,13 @@ nav ul a.on,nav ul a:hover{color:var(--ink)}nav ul a.on::after{transform:scaleX(
       <img class="thumb" src="img/macro-keyboard.jpg" alt="Macro keyboard with two knobs, a small display and four touch keys" loading="lazy">
       <h3><a href="macro-keyboard.html">Macro Keyboard</a></h3>
       <p>A wired mini keyboard with programmed shortcuts and two modes, Coding and Meeting.</p>
+      <ul><li>Arduino</li><li>IoT</li></ul>
+      <span class="more">View details</span>
+    </article>
+    <article class="card">
+      <div class="thumb eyes" aria-hidden="true"><i></i><i></i></div>
+      <h3><a href="curious-eye.html">Curious Eye</a></h3>
+      <p>A fun desk gadget: wave your hand and an eye wakes up, follows it, then gets angry when you leave.</p>
       <ul><li>Arduino</li><li>IoT</li></ul>
       <span class="more">View details</span>
     </article>
