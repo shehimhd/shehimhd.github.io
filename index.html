@@ -260,6 +260,8 @@ nav ul a.on,nav ul a:hover{color:var(--ink)}nav ul a.on::after{transform:scaleX(
 .thumb.eyes i{width:40px;height:54px;border-radius:14px;background:#fff;box-shadow:0 0 14px rgba(255,255,255,.4);animation:blink 4.5s infinite,glance 7s ease-in-out infinite}
 @keyframes blink{0%,90%,100%{transform:scaleY(1)}94%{transform:scaleY(.1)}}
 @keyframes glance{0%,35%,100%{translate:0}45%,60%{translate:14px}70%,85%{translate:-14px}}
+
+.card .thumb.top{object-position:top left}
 </style>
 </head>
 <body>
@@ -338,6 +340,13 @@ nav ul a.on,nav ul a:hover{color:var(--ink)}nav ul a.on::after{transform:scaleX(
       <ul><li class="wip">In progress</li></ul>
     </article>
     <article class="card">
+      <img class="thumb top" src="img/getpackage-1.png" alt="The GetPackage window" loading="lazy">
+      <h3><a href="getpackage.html">GetPackage</a></h3>
+      <p>A .NET executable that builds deployment packages for Web Forms applications from Git changes, cutting manual effort and release errors.</p>
+      <ul><li>.NET</li><li>C#</li><li>Git</li></ul>
+      <span class="more">View details</span>
+    </article>
+    <article class="card">
       <img class="thumb" src="img/macro-keyboard.jpg" alt="Macro keyboard with two knobs, a small display and four touch keys" loading="lazy">
       <h3><a href="macro-keyboard.html">Macro Keyboard</a></h3>
       <p>A wired mini keyboard with programmed shortcuts and two modes, Coding and Meeting.</p>
@@ -350,11 +359,6 @@ nav ul a.on,nav ul a:hover{color:var(--ink)}nav ul a.on::after{transform:scaleX(
       <p>A fun desk gadget: wave your hand and an eye wakes up, follows it, then gets angry when you leave.</p>
       <ul><li>Arduino</li><li>IoT</li></ul>
       <span class="more">View details</span>
-    </article>
-    <article class="card">
-      <h3>GetPackage</h3>
-      <p>A .NET executable that builds deployment packages for Web Forms applications. It reads Git metadata to find modified files and assembles a structured package for production releases, which cuts manual effort and release errors.</p>
-      <ul><li>.NET</li><li>C#</li><li>Git</li></ul>
     </article>
     <article class="card">
       <h3>IEDC MESCE website</h3>
