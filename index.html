@@ -229,6 +229,23 @@ nav ul a.on,nav ul a:hover{color:var(--ink)}nav ul a.on::after{transform:scaleX(
 .js .role{animation:pop .6s .95s backwards}
 .js .cta{animation:pop .6s 1.35s backwards}
 @media(max-width:700px){.frame{width:clamp(84px,24vw,110px)}.cta .loc{margin-left:0;width:100%}}
+
+/* in-progress badge */
+.card li.wip{display:inline-flex;align-items:center;gap:9px;border-color:var(--acc2);color:var(--acc2);font-weight:600}
+.card li.wip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc2);animation:pulse 1.6s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,122,89,.6)}100%{box-shadow:0 0 0 10px rgba(255,122,89,0)}}
+/* workspace */
+.ws{display:grid;grid-template-columns:1fr minmax(0,460px);gap:48px;align-items:center}
+.ws-copy{margin:0;font:400 clamp(1.5rem,2.8vw,2.2rem)/1.3 var(--ser);color:#CFCCD8;max-width:20em}
+.ws-photo{margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--line);aspect-ratio:3/4;background:var(--bg2)}
+.ws-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.ws-photo:hover img{transform:scale(1.05)}
+@media(max-width:800px){.ws{grid-template-columns:1fr;gap:28px}}
+
+.ws-copy{display:grid;gap:22px;font:400 1.1rem/1.65 var(--body);color:#CFCCD8;max-width:34em}
+.ws-copy p{margin:0}
+.ws-copy p:first-child{font:400 clamp(1.5rem,2.6vw,2.1rem)/1.3 var(--ser);color:var(--ink)}
+.ws-copy p:last-child{font:italic 400 clamp(1.25rem,2.2vw,1.6rem)/1.35 var(--ser);color:var(--acc)}
 </style>
 </head>
 <body>
@@ -244,7 +261,7 @@ nav ul a.on,nav ul a:hover{color:var(--ink)}nav ul a.on::after{transform:scaleX(
       <figure class="frame"><div class="arch"><img class="photo" src="img/shehin.jpg" alt="Portrait of Shehin Mohammed P" width="320" height="400"></div></figure>
       <div class="nm"><span class="hi">Hello, I’m</span><h1>Shehin<br>Mohammed P</h1></div>
     </div>
-    <p class="role">I build and support .NET web applications, APIs and data pipelines for enterprise teams.</p>
+    <p class="role">Developing and maintaining scalable web applications, web services and data processing solutions.</p>
     <div class="tags"><span>Software Engineer</span><span>Full stack</span><span>L3 support</span></div>
     <div class="cta">
       <a class="hbtn p" href="#projects">View my work</a>
@@ -256,7 +273,7 @@ nav ul a.on,nav ul a:hover{color:var(--ink)}nav ul a.on::after{transform:scaleX(
 
 <div class="state"><div class="wrap">
   <h2>I build the software <em>businesses run on.</em></h2>
-  <p>Four years of C#, .NET and SQL Server in enterprise environments: web apps, REST APIs, SSIS pipelines and e-commerce platforms. When something breaks in production, I’m the one who digs in and fixes it.</p>
+  <p>Four years of C#, .NET, ASP.NET Core, Razor, Blazor, Next.js (JS &amp; TS) and SQL Server in enterprise environments: web apps, REST APIs, SSIS pipelines and e-commerce platforms. When something breaks in production, I’m the one who digs in and fixes it.</p>
   <div class="stats">
     <div><b>4+</b><span>years of experience</span></div>
     <div><b>3×</b><span>Eagle Squad Award</span></div>
@@ -302,6 +319,11 @@ nav ul a.on,nav ul a:hover{color:var(--ink)}nav ul a.on::after{transform:scaleX(
   <div class="wrap">
   <div class="rail" tabindex="0" role="region" aria-label="Projects">
     <article class="card">
+      <h3>Trip Planner</h3>
+      <p>A different way to plan your trip with friends.</p>
+      <ul><li class="wip">In progress</li></ul>
+    </article>
+    <article class="card">
       <h3>GetPackage</h3>
       <p>A .NET executable that builds deployment packages for Web Forms applications. It reads Git metadata to find modified files and assembles a structured package for production releases, which cuts manual effort and release errors.</p>
       <ul><li>.NET</li><li>C#</li><li>Git</li></ul>
@@ -327,6 +349,18 @@ nav ul a.on,nav ul a:hover{color:var(--ink)}nav ul a.on::after{transform:scaleX(
   </div>
 </section>
 
+<section id="workspace"><div class="wrap">
+  <h2 class="big">My <em>workspace.</em></h2>
+  <div class="ws">
+    <div class="ws-copy">
+      <p>I’ve gradually built and refined this setup, not to have the “perfect desk,” but to create an environment that helps me do my best every day.</p>
+      <p>Every small upgrade was made with one goal in mind: reduce distractions, improve focus, and enjoy the process of building things.</p>
+      <p>Here’s to building better things, better habits, and becoming a little better every day.</p>
+    </div>
+    <figure class="ws-photo"><img src="img/workspace.jpg" alt="Shehin’s desk with a large monitor showing Visual Studio, a second screen with chat and email, a keyboard, tablet and laptop against a red wall" width="1100" height="1467" loading="lazy"></figure>
+  </div>
+</div></section>
+
 <section id="awards"><div class="wrap">
   <div class="award">
     <div class="yrs">2024<br>2025<br>2026</div>
@@ -346,11 +380,10 @@ nav ul a.on,nav ul a:hover{color:var(--ink)}nav ul a.on::after{transform:scaleX(
   <div class="hello">
     <h2>Say <em>hello.</em></h2>
     <p>Open to full stack and .NET roles. Send a message and I’ll reply.</p>
-    <!-- TODO: replace with your own details -->
     <div class="links">
-      <a href="mailto:your.email@example.com">Email</a>
-      <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:shehimhd@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/shehin-mohammed-97b8471b7?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/shehimhd" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </section>
@@ -374,6 +407,10 @@ R.addEventListener('scroll',upd,{passive:true});addEventListener('resize',layout
 d.getElementById('next').onclick=()=>R.scrollLeft>=R.scrollWidth-R.clientWidth-4?R.scrollTo({left:0}):R.scrollBy({left:step});
 d.getElementById('prev').onclick=()=>R.scrollLeft<=4?R.scrollTo({left:R.scrollWidth}):R.scrollBy({left:-step});
 layout();
+let tx=0,ty=0,ly=0,ax='';const atEnd=()=>R.scrollLeft>=R.scrollWidth-R.clientWidth-4,atStart=()=>R.scrollLeft<=4;
+R.addEventListener('touchstart',e=>{const t=e.touches[0];tx=t.clientX;ty=ly=t.clientY;ax=''},{passive:true});
+R.addEventListener('touchmove',e=>{const t=e.touches[0],dx=t.clientX-tx,dy=t.clientY-ty;if(!ax&&(Math.abs(dx)>4||Math.abs(dy)>4))ax=Math.abs(dy)>Math.abs(dx)?'y':'x';if(ax==='y'){const pass=(dy<0&&atEnd())||(dy>0&&atStart());if(!pass&&e.cancelable)e.preventDefault()}},{passive:false});
+R.addEventListener('touchend',e=>{if(ax!=='y')return;const dy=e.changedTouches[0].clientY-ty;if(Math.abs(dy)<40)return;if(dy<0&&!atEnd())R.scrollBy({left:step});else if(dy>0&&!atStart())R.scrollBy({left:-step})},{passive:true});
 if(rm)return;
 root.classList.add('js');
 /* hero name */
@@ -383,7 +420,7 @@ h1.innerHTML=['Shehin','Mohammed P'].map(w=>'<span class="ln" aria-hidden="true"
 const m=d.querySelector('.marq'),m2=m.cloneNode(true),w=['Git','Swagger','Postman','Insomnia','GitHub Copilot','Code reviews','L3 support','SDLC','Query tuning','Data migration'];
 m2.firstElementChild.innerHTML=w.concat(w).map(x=>`<span>${x}</span><i>✦</i>`).join('');m2.firstElementChild.style.animationDirection='reverse';m2.classList.add('alt');m.after(m2);
 /* scroll reveals */
-[['.state h2,.state p,h2.big,.hint,.stats>div,.job li,.award>*,.hello>*,.edu','up'],['.job>div:first-child','left'],['.card,.sx,.hello','scale']].forEach(([sel,v])=>d.querySelectorAll(sel).forEach(el=>{el.classList.add('r',v);el.style.setProperty('--d',Math.min([...el.parentElement.children].indexOf(el),8)*90+'ms')}));
+[['.state h2,.state p,h2.big,.hint,.stats>div,.job li,.award>*,.hello>*,.edu,.ws-copy','up'],['.job>div:first-child','left'],['.card,.sx,.hello,.ws-photo','scale']].forEach(([sel,v])=>d.querySelectorAll(sel).forEach(el=>{el.classList.add('r',v);el.style.setProperty('--d',Math.min([...el.parentElement.children].indexOf(el),8)*90+'ms')}));
 function count(b){const m=b.textContent.match(/^(\d+)(.*)$/);if(!m)return;const to=+m[1],t0=performance.now();(function f(t){const p=Math.min((t-t0)/1300,1);b.textContent=Math.round(to*(1-Math.pow(1-p,3)))+m[2];if(p<1)requestAnimationFrame(f)})(t0)}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;el.classList.add('in');io.unobserve(el);setTimeout(()=>el.classList.add('done'),1700);if(el.matches('.stats>div'))count(el.querySelector('b'))}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
 d.querySelectorAll('.r').forEach(el=>io.observe(el));
